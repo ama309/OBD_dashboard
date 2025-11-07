@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Car Diagnostics Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.socket.io/4.3.2/socket.io.min.js"></script>
+</head>
+<body>
+  <h1>Car Diagnostics Dashboard</h1>
+
+  <div class="tabs">
+    <button class="tab active" onclick="openTab('live')">Live Values</button>
+    <button class="tab" onclick="openTab('graphs')">Graphs</button>
+    <button class="tab" onclick="openTab('errors')">Error Codes</button>
+    <button class="tab" onclick="openTab('logging')">Logging</button>
+  </div>
+
+  <div id="live" class="tab-content active">
+    <div class="value"><b>RPM:</b> <span id="rpm">--</span></div>
+    <div class="value"><b>Speed:</b> <span id="speed">--</span></div>
+    <div class="value"><b>Throttle:</b> <span id="throttle">--</span></div>
+    <div class="value"><b>Turbo:</b> <span id="turbo">--</span></div>
+    <div class="value"><b>Gear:</b> <span id="gear">--</span></div>
+  </div>
+
+  <div id="graphs" class="tab-content">
+    <div id="chart-grid" class="grid"></div>
+  </div>
+
+  <div id="errors" class="tab-content">
+    <h3>Error Codes (DTCs)</h3>
+    <ul id="error-list">None</ul>
+  </div>
+
+  <div id="logging" class="tab-content">
+    <button onclick="toggleLogging()">Start Logging</button>
+    <p id="log-status">Not logging</p>
+  </div>
+
+  <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</body>
+</html>

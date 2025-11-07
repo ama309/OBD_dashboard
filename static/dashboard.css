@@ -1,0 +1,85 @@
+body {
+  font-family: sans-serif;
+  background: #111;
+  color: #eee;
+  text-align: center;
+}
+
+h1 {
+  color: #0ff;
+}
+
+.value {
+  margin: 10px;
+  font-size: 1.5em;
+}
+
+.tabs {
+  margin: 10px 0;
+}
+
+.tab {
+  background: #222;
+  border: none;
+  color: #ccc;
+  padding: 10px 20px;
+  margin: 0 2px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.tab.active {
+  background: #0ff;
+  color: #000;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+canvas {
+  width: 90%;
+  max-width: 600px;
+  height: 300px;
+  margin: 20px auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 12px;
+  margin-top: 10px;
+}
+
+.chart-container {
+  background: #161b22;
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #e6edf3;
+  font-size: 0.9rem;
+}
+
+.chart-header select {
+  background: #21262d;
+  color: #c9d1d9;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+canvas {
+  height: 180px !important;
+}
